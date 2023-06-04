@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './Components/Navbar';
+import UserPage from './Pages/UserPage';
+import ManagementPage from './Pages/ManagementPage';
 
-function App() {
+export default function App() {
+  const [wastes, setWastes] = useState([]);
+
+  const handleEntrySaved = () => {
+    // Fetch the updated waste entries from local storage
+    const wasteObj = localStorage.getItem('wastes');
+    if (wasteObj) {
+      setWastes(JSON.parse(wasteObj));
+    }
+  };
+
+  const fetchWastes = () => {
+    const wasteObj = localStorage.getItem('wastes');
+    if (wasteObj) {
+      setWastes(JSON.parse(wasteObj));
+    }
+  };
+
+  useEffect(() => {
+    fetchWastes();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route exact path="/" element={<UserPage onEntrySaved={handleEntrySaved} />} />
+        <Route exact path="/management" element={<ManagementPage wastes={wastes} setWastes={setWastes} />} />
+      </Routes>
+    </Router>
   );
 }
-
-export default App;
