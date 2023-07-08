@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Waste-Management/static/css/main.8f967a8e.css",
+    "main.js": "/Waste-Management/static/js/main.46d5652d.js",
+    "index.html": "/Waste-Management/index.html",
+    "main.8f967a8e.css.map": "/Waste-Management/static/css/main.8f967a8e.css.map",
+    "main.46d5652d.js.map": "/Waste-Management/static/js/main.46d5652d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8f967a8e.css",
+    "static/js/main.46d5652d.js"
+  ]
+}
