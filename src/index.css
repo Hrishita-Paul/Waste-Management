@@ -51,14 +51,53 @@ body{
   display: flex;
   flex-direction: column;
   line-height: 40px;
+  margin-top:1px;
+}
+@media screen and (max-width: 400px) {
+  .terms a{
+    font-size:12px;
+  }
+  .footer p{
+    font-size:12px;
+  }
+  .footer a {
+    color: #fff;
+    text-decoration: none;
+    font-size:10px;
+    line-height: 30px;
+  }
+}
+
+@media screen and (min-width:401px) and (max-width: 599px) {
+  .terms a{
+    font-size:14px;
+  }
+  .footer p{
+    font-size:14px;
+  }
+  .footer a {
+    color: #fff;
+    text-decoration: none;
+    font-size:12px;
+    line-height: 30px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .terms a{
+    font-size:20px;
+  }
+  .footer p{
+    font-size:20px;
+  }
+  .footer a {
+    color: #fff;
+    text-decoration: none;
+    line-height: 40px;
+  }
 }
 
 
-.footer a {
-  color: #fff;
-  text-decoration: none;
-  line-height: 40px;
-}
 
 .footer a:hover{
   text-decoration: underline;
