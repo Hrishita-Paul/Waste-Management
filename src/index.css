@@ -1,28 +1,51 @@
 h2{
-  color:rgba(0, 0, 0, 0.704);
+  color:rgba(15, 1, 1, 0.704);
   font-weight:bolder;
   text-align:center;
   margin-top:10px;
 }
+.heading{
+  color:rgba(240, 11, 11, 0.704);
+  font-weight:bolder;
+  text-align:center;
+  margin-top:10px;
+}
+img{
+  display:block;
+  margin:10px auto;
+}
 
 body{
-  background-color: #f1f1f1;
+  background-color: #3ac45c;
   font-family:  Arial, sans-serif;
 }
 #submit {
   margin-left: 210px;
   float: left;
 }
-
+.btn-sm{
+  margin-left:0px;
+}
 .clear-all-button {
-  margin-right: 220px;
-  float: right;
+  margin-left:46px;
+  
+}
+.table{
+  width:90vw;
+  margin:20px 50px;
+  border:1px beige solid;
+
 }
 .page-content {
   padding-top: 70px; 
 }
 
-
+.row{
+  margin:20px 40px;
+}
+.save{
+  margin:0 40px;
+}
 .footer {
   background-color: #333;
   padding: 20px;

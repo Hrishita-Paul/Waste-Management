@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Icon } from "@iconify/react";
+
 
 export default function UserPage({ onEntrySaved }) {
   const [name, setName] = useState('');
@@ -56,8 +56,8 @@ export default function UserPage({ onEntrySaved }) {
 
   return (
     <div className="page-content">
-      <h2>Details of wastes</h2>
-      <hr />
+      <h2 className="heading">Details of wastes</h2>
+      <img src="https://wallpaperaccess.com/full/4190899.jpg" height="600px" width="1480px"/>
 
       <form onSubmit={handleSubmit}>
         <div className="row g-3">
@@ -141,7 +141,7 @@ export default function UserPage({ onEntrySaved }) {
           </div>
         </div>
 
-        <button type="submit" className="btn btn-primary mt-3">
+        <button  type="submit" className="btn btn-primary mt-3 save">
           Save your entry
         </button>
       </form>

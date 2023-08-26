@@ -55,7 +55,6 @@ export default function ManagementPage({ wastes, setWastes }) {
   return (
     <div className="page-content">
       <h2>Entries of Waste</h2>
-      <hr />
 
       {wastes.length > 0 ? (
         <table className="table">
@@ -66,7 +65,7 @@ export default function ManagementPage({ wastes, setWastes }) {
               <th>Location</th>
               <th>Date</th>
               <th>Nature of Waste</th>
-              <th>Action</th>
+              <th className="action">Action</th>
             </tr>
           </thead>
           <tbody>
@@ -78,7 +77,7 @@ export default function ManagementPage({ wastes, setWastes }) {
                 <td>{waste.date}</td>
                 <td>{waste.nature}</td>
                 <td>
-                  <button className="btn btn-danger mb-3" onClick={() => handleDeleteWaste(index)}>Delete</button>
+                  <button className="btn btn-danger mb-3 btn-sm" onClick={() => handleDeleteWaste(index)}>Delete</button>
                 </td>
               </tr>
             ))}
@@ -88,7 +87,7 @@ export default function ManagementPage({ wastes, setWastes }) {
         <p>No waste entries found.</p>
       )}
 
-      <button className="btn btn-danger mb-3" onClick={handleClearAll}>
+      <button className="btn btn-danger mb-3 clear-all-button" onClick={handleClearAll}>
         Clear All
       </button>
     </div>
