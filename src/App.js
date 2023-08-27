@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './Components/Navbar';
+import { Navbar, Nav } from 'react-bootstrap';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import UserPage from './Pages/UserPage';
 import ManagementPage from './Pages/ManagementPage';
 
@@ -28,9 +28,24 @@ export default function App() {
 
   return (
     <Router>
-      <Navbar />
+      <Navbar bg="dark" expand="lg" variant="dark" className="fixed-top">
+        <Navbar.Brand >
+         Waste Management Site
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mr-auto">
+          <Nav.Link as={Link} to="/" style={{ color: 'white' }}>
+              UserPage
+            </Nav.Link>
+            <Nav.Link as={Link} to="/management" style={{ color: 'white' }}>
+              ManagementPage
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
       <Routes>
-        <Route exact path="/" element={<UserPage onEntrySaved={handleEntrySaved} />} />
+       <Route exact path="/" element={<UserPage onEntrySaved={handleEntrySaved} />} />
         <Route exact path="/management" element={<ManagementPage wastes={wastes} setWastes={setWastes} />} />
       </Routes>
     </Router>

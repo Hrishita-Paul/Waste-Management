@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-
 export default function UserPage({ onEntrySaved }) {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
@@ -57,7 +56,7 @@ export default function UserPage({ onEntrySaved }) {
   return (
     <div className="page-content">
       <h2 className="heading">Details of wastes</h2>
-      <img src="https://wallpaperaccess.com/full/4190899.jpg" height="600px" width="1480px"/>
+      <img src="https://wallpaperaccess.com/full/4190899.jpg"/>
 
       <form onSubmit={handleSubmit}>
         <div className="row g-3">
@@ -145,7 +144,7 @@ export default function UserPage({ onEntrySaved }) {
           Save your entry
         </button>
       </form>
-      <footer class="footer">
+      <footer className="footer">
         <div className="references">
           <p>References</p>
           <a href="https://www.nature.org/en-us/about-us/where-we-work/united-states/delaware/stories-in-delaware/delaware-eight-ways-to-reduce-waste/" target="_blank">Community waste management</a>
