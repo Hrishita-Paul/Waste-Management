@@ -6,7 +6,7 @@ export default function ManagementPage({ wastes, setWastes }) {
 
   // Deletes a waste entry from the list
   const handleDeleteWaste = (index) => {
-    const wasteObj = [...wastes];
+    const wasteObj =JSON.parse(localStorage.getItem('wastes'));
     wasteObj.splice(index, 1);
     localStorage.setItem('wastes', JSON.stringify(wasteObj));
     setWastes(wasteObj);
@@ -54,7 +54,7 @@ export default function ManagementPage({ wastes, setWastes }) {
   // If user is logged in, display the waste management content
   return (
     <div className="page-content">
-      <h2>Entries of Waste</h2>
+      <h2 className="entries">Entries of Waste</h2>
 
       {wastes.length > 0 ? (
         <table className="table">
@@ -69,7 +69,8 @@ export default function ManagementPage({ wastes, setWastes }) {
             </tr>
           </thead>
           <tbody>
-            {wastes.map((waste, index) => (
+            {wastes.map((waste, index) =>{
+              return (
               <tr key={index}>
                 <td>{waste.name}</td>
                 <td>{waste.number}</td>
@@ -80,11 +81,12 @@ export default function ManagementPage({ wastes, setWastes }) {
                   <button className="btn btn-danger mb-3 btn-sm" onClick={() => handleDeleteWaste(index)}>Delete</button>
                 </td>
               </tr>
-            ))}
+            )
+            })}
           </tbody>
         </table>
       ) : (
-        <p>No waste entries found.</p>
+        <p className="empty">No waste entries found.</p>
       )}
 
       <button className="btn btn-danger mb-3 clear-all-button" onClick={handleClearAll}>
