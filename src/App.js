@@ -35,7 +35,7 @@ export default function App() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-          <Nav.Link as={Link} to="/" style={{ color: 'white' }}>
+          <Nav.Link as={Link} to="/Waste-Management" style={{ color: 'white' }}>
               UserPage
             </Nav.Link>
             <Nav.Link as={Link} to="/management" style={{ color: 'white' }}>
@@ -45,7 +45,7 @@ export default function App() {
         </Navbar.Collapse>
       </Navbar>
       <Routes>
-       <Route exact path="/" element={<UserPage onEntrySaved={handleEntrySaved} />} />
+       <Route exact path="/Waste-Management" element={<UserPage onEntrySaved={handleEntrySaved} />} />
         <Route exact path="/management" element={<ManagementPage wastes={wastes} setWastes={setWastes} />} />
       </Routes>
     </Router>

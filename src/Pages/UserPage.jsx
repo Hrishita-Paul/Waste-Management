@@ -43,12 +43,13 @@ export default function UserPage({ onEntrySaved }) {
 
     wasteObj.push(obj);
     localStorage.setItem('wastes', JSON.stringify(wasteObj));
-
+    alert('Entry saved successfully');
     setName('');
     setNumber('');
     setNature('');
     setLocation('');
     setDate('');
+
     // Invoke the callback function to notify the parent component (App) about the entry being saved
     onEntrySaved();
   };
@@ -56,7 +57,7 @@ export default function UserPage({ onEntrySaved }) {
   return (
     <div className="page-content">
       <h2 className="heading">Details of wastes</h2>
-      <img src="https://wallpaperaccess.com/full/4190899.jpg"/>
+      <img src="https://wallpaperaccess.com/full/4190899.jpg" />
 
       <form onSubmit={handleSubmit}>
         <div className="row g-3">
@@ -71,6 +72,7 @@ export default function UserPage({ onEntrySaved }) {
               placeholder="Enter your name"
               value={name}
               onChange={handleNameChange}
+              required
             />
           </div>
           <div className="col-md-6">
@@ -78,12 +80,13 @@ export default function UserPage({ onEntrySaved }) {
               Contact number
             </label>
             <input
-              type="text"
+              type="number"
               className="form-control"
               id="addNumber"
               placeholder="Enter your contact number"
               value={number}
               onChange={handleNumberChange}
+              required
             />
           </div>
           <div className="col-12">
@@ -97,6 +100,7 @@ export default function UserPage({ onEntrySaved }) {
               placeholder="Location of the waste"
               value={location}
               onChange={handleLocationChange}
+              required
             />
           </div>
 
@@ -125,6 +129,7 @@ export default function UserPage({ onEntrySaved }) {
               placeholder="Type to search..."
               value={nature}
               onChange={handleNatureChange}
+              required
             />
             <datalist id="datalistOptions">
 
@@ -140,10 +145,13 @@ export default function UserPage({ onEntrySaved }) {
           </div>
         </div>
 
-        <button  type="submit" className="btn btn-primary mt-3 save">
+        <button type="submit" className="btn btn-primary mt-3 save">
           Save your entry
         </button>
       </form>
+      <div className="para"><p>Your interest in our services and commitment to responsible waste disposal is deeply appreciated.
+        We are dedicated to providing efficient and sustainable waste management solutions that make a positive impact on our environment.
+        Your visit demonstrates your commitment to this cause, and for that, we thank you.</p></div>
       <footer className="footer">
         <div className="references">
           <p>References</p>
