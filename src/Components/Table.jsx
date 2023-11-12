@@ -21,7 +21,7 @@ export default function Table({ data, onDelete }) {
               <td>{waste.date}</td>
               <td>{waste.nature}</td>
               <td>
-                <button className="btn btn-danger mb-3 btn-sm" onClick={() => onDelete(index)}>Delete</button>
+                <button className="btn btn-danger mb-3 btn-sm" onClick={() => onDelete(index)}>Waste recycled</button>
               </td>
             </tr>
           ))}

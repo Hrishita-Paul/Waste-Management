@@ -1,10 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect} from 'react';
 import Table from "../Components/Table.jsx"
+import './ManagementPage.css'
 export default function ManagementPage({ wastes, setWastes }) {
   const [password, setPassword] = useState('');
   const [loggedIn, setLoggedIn] = useState(false);
   const [toggle, setToggle] = useState("bio");
+  const [revenueCount, setRevenueCount] = useState(0);
 
+  useEffect(() => {
+    setRevenueCount(JSON.parse(localStorage.getItem("revenue")) || 10000);
+  }, []);
+  
   // Deletes a waste entry from the list
   const handleDeleteWaste = (index) => {
     const wasteObj = JSON.parse(localStorage.getItem('wastes'));
@@ -14,17 +20,28 @@ export default function ManagementPage({ wastes, setWastes }) {
         ? wastes.filter(waste => waste.nature === "Plastic waste")
         : wastes;
 
-    // Find the index of the item to delete in the filtered data
     const itemToDelete = filteredData[index];
     const itemIndexToDelete = wastes.indexOf(itemToDelete);
 
     if (itemIndexToDelete > -1) {
+      const nature = wasteObj[itemIndexToDelete].nature;
+      let additionalRevenue = 0;
+      if (nature === "Dairy") additionalRevenue = 500;
+      else if (nature === "Pulp and Paper" || nature === "Fertilizer") additionalRevenue = 1000;
+      else if (nature === "Plastic waste") additionalRevenue = 2000;
+      else if (nature === "Food waste") additionalRevenue = 100;
+      else if (nature === "Dispensary waste") additionalRevenue = 200;
+      else if (nature === "Other") additionalRevenue = 100;
+
+      setRevenueCount((prevRevenue) => prevRevenue + additionalRevenue);
+
+      localStorage.setItem("revenue", JSON.stringify(revenueCount + additionalRevenue));
+
       wasteObj.splice(itemIndexToDelete, 1);
       localStorage.setItem('wastes', JSON.stringify(wasteObj));
       setWastes(wasteObj);
     }
   };
-
 
   // Handles the toggle switch
   const handleToggle = () => {
@@ -55,6 +72,7 @@ export default function ManagementPage({ wastes, setWastes }) {
   // If the user is not logged in, display the login form
   if (!loggedIn) {
     return (
+      <div className="managementpage-content">
       <div className="login-container">
         <div className="login-card">
           <h2>Login</h2>
@@ -72,12 +90,14 @@ export default function ManagementPage({ wastes, setWastes }) {
           </form>
         </div>
       </div>
+      </div>
     );
   }
 
   // If the user is logged in, display the waste management content
   return (
-    <div className="page-content">
+    <div className="managementpage-content">
+      <h2 classname="revenue">Revenue Generated:{revenueCount}</h2>
       <h2 className="entries">Entries of Waste</h2>
       <div className="toggle-slider">
         <label className="switch">

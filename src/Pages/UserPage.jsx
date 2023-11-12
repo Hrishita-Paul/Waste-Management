@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import './UserPage.css'
 export default function UserPage({ onEntrySaved }) {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
@@ -55,10 +55,57 @@ export default function UserPage({ onEntrySaved }) {
   };
 
   return (
-    <div className="page-content">
+    <div className="userpage-content">
+      
+      
+      <img src="https://th.bing.com/th/id/OIG.HXYgMofmjsq2pKMKVbYd?pid=ImgGn" />
+      <div id="#about">
+      <div class="accordion" id="accordionExample">
+        <div className="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            <p className="header">1. What we do?</p>
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>At the forefront of environmental sustainability, our Waste Management website aims to transform how we handle and dispose of waste on campus.
+                Our comprehensive system seamlessly integrates information collection, waste sorting, and efficient communication with third-party organizations for responsible waste disposal and recycling.</strong>
+            </div>
+          </div>
+        </div>
+        <div className="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            <p className="header">2. Data collection and sorting</p>
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>Our innovative platform facilitates the easy and systematic collection of information about various types of waste found on the campus.
+                Through user-friendly interfaces, students, faculty, and staff can report and categorize waste items effortlessly.
+                Leveraging advanced sorting algorithms, our system categorizes reported waste items based on their nature.
+                Whether it's recyclable materials, organic waste, or general refuse, our technology ensures precise identification.</strong>
+            </div>
+          </div>
+        </div>
+        <div className="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              <p className="header">3. Implementation</p>
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>This website features a centralized management page that acts as the nerve center for overseeing the waste management process.
+                Through this interface, designated personnel can access detailed reports, monitor trends, and make informed decisions regarding waste handling.
+                The management page serves as a powerful tool for optimizing waste management strategies and improving overall sustainability efforts.</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
       <h2 className="heading">Details of wastes</h2>
-      <img src="https://wallpaperaccess.com/full/4190899.jpg" />
-
       <form onSubmit={handleSubmit}>
         <div className="row g-3">
           <div className="col-md-6">

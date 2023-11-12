@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import HomePage from './Pages/HomePage';
 import UserPage from './Pages/UserPage';
 import ManagementPage from './Pages/ManagementPage';
 
@@ -36,6 +37,9 @@ export default function App() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
           <Nav.Link as={Link} to="/" style={{ color: 'white' }}>
+              HomePage
+            </Nav.Link>
+            <Nav.Link as={Link} to="/user" style={{ color: 'white' }}>
               UserPage
             </Nav.Link>
             <Nav.Link as={Link} to="/management" style={{ color: 'white' }}>
@@ -45,7 +49,8 @@ export default function App() {
         </Navbar.Collapse>
       </Navbar>
       <Routes>
-       <Route exact path="/" element={<UserPage onEntrySaved={handleEntrySaved} />} />
+      <Route exact path="/" element={<HomePage />} />
+       <Route exact path="/user" element={<UserPage onEntrySaved={handleEntrySaved} />} />
         <Route exact path="/management" element={<ManagementPage wastes={wastes} setWastes={setWastes} />} />
       </Routes>
     </Router>
