@@ -15,7 +15,6 @@ h2{
     margin:20px;
   }
   .userpage-content{
-   
     background-color: rgb(129, 218, 141);
     font-family:  Arial, sans-serif;
   }
@@ -90,7 +89,7 @@ h2{
       line-height: 30px;
     }
     img{
-        margin-top:30px;
+      padding-top:60px;
       width:300px;
       height:200px;
       display:block;
@@ -136,7 +135,7 @@ h2{
       line-height: 30px;
     }
     img{
-      padding-top:40px;
+      padding-top:50px;
       width:350px;
       height:300px;
       display: block;
@@ -174,7 +173,7 @@ h2{
     }
     img{
       padding-top:80px;
-      width:750px;
+      width:550px;
       height:500px;
       display: block;
       margin:20px auto;

@@ -58,7 +58,7 @@ export default function UserPage({ onEntrySaved }) {
     <div className="userpage-content">
       
       
-      <img src="https://th.bing.com/th/id/OIG.HXYgMofmjsq2pKMKVbYd?pid=ImgGn" />
+      <img src="https://miro.medium.com/v2/resize:fit:828/format:webp/0*nlF4bVYdzCixy3y-" />
       <div id="#about">
       <div class="accordion" id="accordionExample">
         <div className="accordion-item">
