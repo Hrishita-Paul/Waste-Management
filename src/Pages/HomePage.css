@@ -28,5 +28,24 @@
     position:absolute;
     top:40px;
     left:0px;
-    padding:25px;
+    padding:30px;
+  }
+  @media screen and (max-width: 415px) {
+    .title,.subtitle{
+      display:none;
+    }
+    button{
+     margin-left:30px;
+    }
+    
+  }
+  @media screen and (min-width:416px) and (max-width: 820px) {
+    .subtitle{
+      display:none;
+    }
+    button{
+     margin-left:0px;
+     
+    }
+    
   }
